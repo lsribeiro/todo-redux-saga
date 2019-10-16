@@ -24,7 +24,9 @@ function TodoList(props) {
 
     return(
         <div id="todo-list">
-            { todoList }
+            { 
+            	todoList.length > 0 ? todoList : <h3>The Todo list is empty. Add a new todo</h3>
+            }
         </div>
     );
 }

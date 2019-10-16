@@ -2,16 +2,8 @@ import Todo from '../../objects/todo';
 import { SAVE_TODO, REMOVE_TODO, TOGGLE_TODO } from '../actions/actions';
 
 const initialState = {
-	currentId: 2,
-	todos: [{
-    	id: 0,
-    	text: "Wash car",
-    	done: false
-    }, {
-    	id: 1,
-    	text: "Fix urgent bugs",
-    	done: true
-    }]
+	currentId: 0,
+	todos: []
 }
 export default function reducer(state=initialState, action) {
     switch (action.type) {
