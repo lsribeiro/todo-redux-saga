@@ -16,7 +16,6 @@ class TodoForm extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.onAdd = this.onAdd.bind(this);
     }
 
     handleChange(e) {
@@ -28,11 +27,6 @@ class TodoForm extends React.Component {
 		this.props.addTodo(this.state.todo);
         this.setState({ todo: '' });
 	}
-
-    onAdd() {
-        this.props.addTodo(this.state.todo);
-        this.setState({ todo: '' });
-    }
 
     render() {
         return (
