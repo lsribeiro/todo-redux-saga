@@ -10,6 +10,7 @@
 form {
 	width: 100%;
 	display: flex;
+	align-items: center;
 }
 
 input {
@@ -27,12 +28,17 @@ input[type=submit] {
 	width: 50px;
 	height: 50px;
 
+	font-size: 40px;
+
 	font-family: FontAwesome;
 
 	margin: 0;
 	margin-left: auto;
 
 	background-color: #BBBE64;
+	color: #D9DBF1;
+
+	padding: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -44,6 +50,13 @@ input[type=submit] {
 	input {
 		font-size: 15px;
 	}
+
+	input[type=submit] {
+		height: 40px;
+		width: 40px;
+
+		font-size: 20px;
+	}
 }
 
 @media only screen and (max-width: 360px) {
@@ -54,6 +67,13 @@ input[type=submit] {
 
 	input {
 		font-size: 10px;
-		width: 100%;
+		width: 80%;
+	}
+
+	input[type=submit] {
+		height: 25px;
+		width: 25px;
+
+		font-size: 15px;
 	}
 }
