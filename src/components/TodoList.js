@@ -1,10 +1,22 @@
 import React from 'react';
-import {connect} from "react-redux";
+import { connect } from "react-redux";
+
+import TodoItem from './TodoItem';
+
+import { removeTodo } from '../redux/actions/actions';
 
 function TodoList(props) {
+	let onRemove = (id) => {
+		props.removeTodo(id);
+	};
+
     let todoList = props.todoState.todos.map((todo, index) => {
-        return <li key={index}> { todo }</li>
+    	console.log(todo.id);
+        return(
+        	<TodoItem key={todo.id} onRemove={onRemove} todo={todo}/>
+        );
     });
+
     return(
         <ul>
             { todoList }
@@ -18,4 +30,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(TodoList);
+export default connect(mapStateToProps, { removeTodo })(TodoList);

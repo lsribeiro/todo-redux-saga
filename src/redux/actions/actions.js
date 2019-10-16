@@ -1,5 +1,6 @@
 export const ADD_TODO = 'ADD_TODO';
 export const SAVE_TODO = 'SAVE_TODO';
+export const REMOVE_TODO = 'REMOVE_TODO';
 
 export function addTodo(todo) {
     return {
@@ -12,5 +13,12 @@ export function saveTodo(todo) {
 	return {
 		type: SAVE_TODO,
 		todo
+	};
+};
+
+export function removeTodo(id) {
+	return {
+		type: REMOVE_TODO,
+		id
 	};
 };
