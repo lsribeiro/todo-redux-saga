@@ -1,9 +1,17 @@
 import Todo from '../../objects/todo';
-import { SAVE_TODO, REMOVE_TODO } from '../actions/actions';
+import { SAVE_TODO, REMOVE_TODO, TOGGLE_TODO } from '../actions/actions';
 
 const initialState = {
-	currentId: 0,
-	todos: []
+	currentId: 2,
+	todos: [{
+    	id: 0,
+    	text: "Wash car",
+    	done: false
+    }, {
+    	id: 1,
+    	text: "Fix urgent bugs",
+    	done: true
+    }]
 }
 export default function reducer(state=initialState, action) {
     switch (action.type) {
@@ -17,12 +25,23 @@ export default function reducer(state=initialState, action) {
 
         case REMOVE_TODO:
         	let newTodoList = state.todos.filter((todo) => todo.id !== action.id);
-        	console.log(newTodoList);
         	return {
         		currentId: state.currentId,
         		todos: newTodoList
         	}
 
+        case TOGGLE_TODO:
+        	let todoList = state.todos.map(todo => {
+        		if(todo.id === action.id) {
+        			todo.done = !todo.done;
+        		}
+
+        		return todo;
+        	});
+        	return {
+        		currentId: state.currentId,
+        		todos: todoList
+        	}
         default:
             return state;
     }

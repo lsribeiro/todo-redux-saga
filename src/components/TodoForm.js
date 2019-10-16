@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { addTodo } from '../redux/actions/actions';
 
+import './TodoForm.css';
+
 class TodoForm extends React.Component {
     constructor(props) {
         super(props);
@@ -21,13 +23,14 @@ class TodoForm extends React.Component {
 
     onAdd() {
         this.props.addTodo(this.state.todo);
+        this.setState({ todo: '' });
     }
 
     render() {
         return (
-            <div>
-                <input type="text" onChange={this.handleChange}/>
-                <button onClick={this.onAdd}>Add Todo</button>
+            <div id="todo-form">
+                <input type="text" value={ this.state.todo } onChange={ this.handleChange } placeholder="Add todo..."/>
+                <button onClick={ this.onAdd } className="add-btn"><i className="fa fa-plus" aria-hidden="true"></i></button>
             </div>
         );
     }

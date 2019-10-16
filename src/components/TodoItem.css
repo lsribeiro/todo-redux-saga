@@ -1,0 +1,59 @@
+.todo-item {
+	width: 500px;
+
+	display: flex;
+	align-items: center;
+}
+
+p {
+	color: #416165;
+	
+	margin: 10px;
+
+	font-size: 30px;
+}
+
+strike {
+	color: #ACB0BD;
+}
+
+.todo-done {
+	color: #ACB0BD;
+	text-decoration: line-through;
+}
+
+.btn-container {
+	margin-left: auto;
+}
+
+.remove-btn {
+	background-color: #DAA89B;
+}
+
+.done-btn {
+	background-color: #416165;
+}
+
+.done-active-btn {
+	background-color: #ACB0BD;
+}
+
+@media only screen and (max-width: 768px) {
+	.todo-item {
+		width: 300px;
+	}
+
+	p {
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+	.todo-item {
+		width: 100%;
+	}
+
+	p {
+		font-size: 15px;
+	}
+}

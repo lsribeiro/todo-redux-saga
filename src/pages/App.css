@@ -1,0 +1,60 @@
+#todo-container {
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+
+	align-items: center;
+
+	background-color: #D9DBF1;
+	font-family: 'Work Sans', sans-serif;
+}
+
+h1 {
+	font-size: 75px;
+	color: #0B3948;
+}
+
+button {
+	width: 50px;
+	height: 50px;
+	border: none;
+
+	font-size: 40px;
+
+	color: #D9DBF1;
+}
+
+@media only screen and (max-width: 768px) {
+	#todo-container {
+		width: 100%;
+	}
+
+	h1 {
+		font-size: 60px;
+	}
+
+	button {
+		width: 40px;
+		height: 40px;
+
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+	#todo-container {
+		width: 100%;
+	}
+
+	h1 {
+		font-size: 40px;
+	}
+
+	button {
+		width: 25px;
+		height: 25px;
+
+		font-size: 10px;
+	}
+}

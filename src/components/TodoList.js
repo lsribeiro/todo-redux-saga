@@ -3,24 +3,29 @@ import { connect } from "react-redux";
 
 import TodoItem from './TodoItem';
 
-import { removeTodo } from '../redux/actions/actions';
+import { removeTodo, toggleTodo } from '../redux/actions/actions';
+
+import './TodoList.css';
 
 function TodoList(props) {
 	let onRemove = (id) => {
 		props.removeTodo(id);
 	};
 
+	let onToggle = (id) => {
+		props.toggleTodo(id);
+	};
+
     let todoList = props.todoState.todos.map((todo, index) => {
-    	console.log(todo.id);
         return(
-        	<TodoItem key={todo.id} onRemove={onRemove} todo={todo}/>
+        	<TodoItem key={todo.id} onToggle={onToggle} onRemove={onRemove} todo={todo}/>
         );
     });
 
     return(
-        <ul>
+        <div id="todo-list">
             { todoList }
-        </ul>
+        </div>
     );
 }
 
@@ -30,4 +35,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { removeTodo })(TodoList);
+export default connect(mapStateToProps, { removeTodo, toggleTodo })(TodoList);
